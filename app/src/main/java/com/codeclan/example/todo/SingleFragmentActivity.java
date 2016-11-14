@@ -1,14 +1,21 @@
 package com.codeclan.example.todo;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
 
-public class TaskActivity extends FragmentActivity {
+/**
+ * Created by user on 14/11/2016.
+ */
+
+public abstract class SingleFragmentActivity extends FragmentActivity
+{
+    protected abstract Fragment createFragment();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
 
@@ -16,10 +23,10 @@ public class TaskActivity extends FragmentActivity {
 
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-            if (fragment == null)
-            {
-                fragment = new TaskFragment();
-                fm.beginTransaction().add(R.id.fragment_container,fragment).commit();
-            }
+        if (fragment == null)
+        {
+            fragment = createFragment();
+            fm.beginTransaction().add(R.id.fragment_container,fragment).commit();
+        }
     }
 }
