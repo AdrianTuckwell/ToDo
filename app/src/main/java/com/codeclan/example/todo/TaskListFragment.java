@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -43,11 +44,24 @@ public class TaskListFragment extends Fragment
 
     private class TaskHolder extends RecyclerView.ViewHolder
     {
-        public TextView mTitleTextView;
+        private Task mTask;
+        private TextView mTitleTextView;
+        private TextView mDateTextView;
+        private CheckBox mCompletedCheckBox;
         public TaskHolder(View itemView)
         {
             super(itemView);
-            mTitleTextView = (TextView) itemView;
+            mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_task_title_text_view);
+            mDateTextView = (TextView) itemView.findViewById(R.id.list_item_task_date_text_view);
+            mCompletedCheckBox = (CheckBox) itemView.findViewById(R.id.list_item_task_completed_check_box);
+        }
+
+        public void bindTask(Task task)
+        {
+            mTask = task;
+            mTitleTextView.setText(mTask.getTitle());
+            mDateTextView.setText(mTask.getDate().toString());
+            mCompletedCheckBox.setChecked(mTask.isCompleted());
         }
     }
 
@@ -63,7 +77,7 @@ public class TaskListFragment extends Fragment
         public TaskHolder onCreateViewHolder(ViewGroup parent, int viewType)
         {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+            View view = layoutInflater.inflate(R.layout.list_item_task, parent, false);
             return new TaskHolder(view);
         }
 
@@ -71,7 +85,7 @@ public class TaskListFragment extends Fragment
         public void onBindViewHolder(TaskHolder holder, int position)
         {
             Task task = mTasks.get(position);
-            holder.mTitleTextView.setText(task.getTitle());
+            holder.bindTask(task);
         }
 
         @Override
