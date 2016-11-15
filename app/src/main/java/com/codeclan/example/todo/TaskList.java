@@ -29,14 +29,20 @@ public class TaskList
     {
         mTasks = new ArrayList<>();
 
-        for (int i = 0; i < 100; i++)
-        {
-            Task task = new Task();
-            task.setTitle("Task #" + i);
-            task.setCompleted(i % 2 == 0);
-            mTasks.add(task);
-        }
+//        for (int i = 0; i < 100; i++)
+//        {
+//            Task task = new Task();
+//            task.setTitle("Task #" + i);
+//            task.setCompleted(i % 2 == 0);
+//            mTasks.add(task);
+//        }
     }
+
+    public void addTask (Task t)
+    {
+        mTasks.add(t);
+    }
+
 
     public List<Task> getTasks()
     {
