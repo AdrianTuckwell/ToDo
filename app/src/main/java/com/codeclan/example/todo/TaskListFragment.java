@@ -76,8 +76,9 @@ public class TaskListFragment extends Fragment
         public void onClick(View v)
         {
                 // Toast.makeText(getActivity(), mTask.getTitle() + "clicked!", Toast.LENGTH_SHORT).show();
-
-            Intent intent = TaskActivity.newIntent(getActivity(),mTask.getId());
+                // Intent intent = TaskActivity.newIntent(getActivity(),mTask.getId());
+            
+            Intent intent = TaskPagerActivity.newIntent(getActivity(), mTask.getId());
             startActivity(intent);
         }
 
