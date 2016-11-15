@@ -53,6 +53,13 @@ public class TaskFragment extends Fragment
     }
 
     @Override
+    public void onPause()
+    {
+        super.onPause();
+        TaskList.get(getActivity()).updateTask(mTask);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstancesState)
     {
         View v = inflater.inflate(R.layout.fragment_task,container,false);

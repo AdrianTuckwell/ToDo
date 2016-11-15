@@ -16,11 +16,17 @@ public class Task {
 
     public Task()
     {
+        this(UUID.randomUUID());
         //Create an ID for the task
-        mId = UUID.randomUUID();
-        mDate = new Date();
+        //mId = UUID.randomUUID();
+        //mDate = new Date();
     }
 
+    public Task(UUID id)
+    {
+        mId = id;
+        mDate = new Date();
+    }
 
     // create getter and setters... (mId does not need setter)
     public UUID getId()
