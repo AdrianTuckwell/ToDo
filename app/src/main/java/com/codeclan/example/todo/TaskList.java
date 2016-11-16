@@ -20,8 +20,6 @@ import java.util.UUID;
 public class TaskList
 {
     private static TaskList sTaskList;
-
-    //private List<Task> mTasks;
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
@@ -90,7 +88,6 @@ public class TaskList
         mDatabase.update(TaskTable.NAME, values, TaskTable.Cols.UUID + " = ?", new String[] {uuidString});
     }
 
-
     private static ContentValues getContentValues(Task task)
     {
         ContentValues values = new ContentValues();
@@ -116,5 +113,4 @@ public class TaskList
         );
         return new TaskCursorWrapper(cursor);
     }
-
 }

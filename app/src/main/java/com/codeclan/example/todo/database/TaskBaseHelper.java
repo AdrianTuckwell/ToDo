@@ -3,12 +3,16 @@ package com.codeclan.example.todo.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import com.codeclan.example.todo.database.TaskDbSchema.TaskTable;
 
 
-/**
- * Created by user on 15/11/2016.
+/*
+ * Created by Adrian Tuckwell on 15/11/2016.
+ *
+ * Steps.
+ * 1. Check if database already exists (using SQLLiteOpenHelper..
+ * 2. If it does not, create it and create the tables...
+ * 3. If it does open it and check what version of TaskDbShema it has
  */
 
 public class TaskBaseHelper extends SQLiteOpenHelper
