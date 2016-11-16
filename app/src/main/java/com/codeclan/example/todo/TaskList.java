@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.codeclan.example.todo.database.TaskBaseHelper;
 import com.codeclan.example.todo.database.TaskCursorWrapper;
-import com.codeclan.example.todo.database.TaskDbSchema;
 import com.codeclan.example.todo.database.TaskDbSchema.TaskTable;
 
 import java.util.ArrayList;
@@ -39,15 +38,6 @@ public class TaskList
     {
         mContext = context.getApplicationContext();
         mDatabase = new TaskBaseHelper(mContext).getWritableDatabase();
-        //mTasks = new ArrayList<>();
-
-//        for (int i = 0; i < 100; i++)
-//        {
-//            Task task = new Task();
-//            task.setTitle("Task #" + i);
-//            task.setCompleted(i % 2 == 0);
-//            mTasks.add(task);
-//        }
     }
 
     public void addTask (Task t)
@@ -59,9 +49,6 @@ public class TaskList
 
     public List<Task> getTasks()
     {
-        //return mTasks;
-        //return new ArrayList<>();
-
         List<Task> tasks = new ArrayList<>();
         TaskCursorWrapper cursor = queryTasks(null, null);
 
@@ -84,7 +71,8 @@ public class TaskList
 
         try
         {
-            if (cursor.getCount() == 0) {
+            if (cursor.getCount() == 0)
+            {
                 return null;
             }
             cursor.moveToFirst();

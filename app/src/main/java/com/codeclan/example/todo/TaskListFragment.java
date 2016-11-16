@@ -114,9 +114,9 @@ public class TaskListFragment extends Fragment
             mAdapter = new TaskAdapter(tasks);
             mTaskRecyclerView.setAdapter(mAdapter);
         } else {
+            mAdapter.setTasks(tasks);
             mAdapter.notifyDataSetChanged();
         }
-
         updateSubtitle();
     }
 
@@ -131,16 +131,12 @@ public class TaskListFragment extends Fragment
             super(itemView);
             itemView.setOnClickListener(this);
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_task_title_text_view);
-            mDateTextView = (TextView) itemView.findViewById(R.id.list_item_task_date_text_view);
             mCompletedCheckBox = (CheckBox) itemView.findViewById(R.id.list_item_task_completed_check_box);
         }
 
         @Override
         public void onClick(View v)
         {
-                // Toast.makeText(getActivity(), mTask.getTitle() + "clicked!", Toast.LENGTH_SHORT).show();
-                // Intent intent = TaskActivity.newIntent(getActivity(),mTask.getId());
-            
             Intent intent = TaskPagerActivity.newIntent(getActivity(), mTask.getId());
             startActivity(intent);
         }
@@ -150,7 +146,6 @@ public class TaskListFragment extends Fragment
         {
             mTask = task;
             mTitleTextView.setText(mTask.getTitle());
-            mDateTextView.setText(DateFormat.format("EEEE dd MMM yyyy", mTask.getDate()).toString());
             mCompletedCheckBox.setChecked(mTask.isCompleted());
 
         }
@@ -183,6 +178,11 @@ public class TaskListFragment extends Fragment
         public int getItemCount()
         {
             return mTasks.size();
+        }
+
+        public void setTasks(List<Task> tasks)
+        {
+            mTasks = tasks;
         }
     }
 }

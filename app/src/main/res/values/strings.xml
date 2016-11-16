@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDo</string>
+    <string name="app_name">Tuck ToDo</string>
     <string name="task_title_hint">Enter new task.</string>
     <string name="task_title_label">Title</string>
     <string name="task_details_label">Details</string>

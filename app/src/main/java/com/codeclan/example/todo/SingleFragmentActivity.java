@@ -22,7 +22,6 @@ public abstract class SingleFragmentActivity extends AppCompatActivity
         setContentView(R.layout.activity_fragment);
 
         FragmentManager fm = getSupportFragmentManager();
-
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
         if (fragment == null)

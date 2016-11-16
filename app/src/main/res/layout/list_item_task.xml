@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#FFFAE3">
 
     <CheckBox android:id="@+id/list_item_task_completed_check_box"
         android:layout_width="wrap_content"
@@ -14,14 +15,15 @@
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/list_item_task_completed_check_box"
         android:textStyle="bold"
+        android:fontFamily="casual"
+        android:textSize="22dp"
         android:padding="4dp" />
 
-    <TextView android:id="@+id/list_item_task_date_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/list_item_task_completed_check_box"
-        android:layout_below="@id/list_item_task_title_text_view"
-        android:textStyle="bold"
-        android:padding="4dp" />
+    <View android:id="@+id/primerdivisor"
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#fab54f" />
+
+
 
 </RelativeLayout>

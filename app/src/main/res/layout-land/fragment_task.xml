@@ -2,26 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFAE3">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/task_title_label"
-        style="?android:listSeparatorTextViewStyle"/>
+        android:fontFamily="casual"
+        android:textSize="20dp"/>
 
     <EditText android:id="@+id/task_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:fontFamily="casual"
+        android:textSize="20dp"
         android:hint="@string/task_title_hint"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/task_details_label"
-        style="?android:listSeparatorTextViewStyle"/>
+        android:fontFamily="casual"
+        android:textSize="20dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -42,8 +47,6 @@
             android:layout_marginRight="16dp"
             android:text="@string/task_completed_label"
             android:layout_weight="1" />
-
-
     </LinearLayout>
 
 </LinearLayout>

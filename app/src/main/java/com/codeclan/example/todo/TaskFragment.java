@@ -128,12 +128,12 @@ public class TaskFragment extends Fragment
         {
             Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mTask.setDate(date);
-            //mDateButton.setText(mTask.getDate().toString());
             updateDate();
-    }
+        }
     }
 
-    private void updateDate() {
+    private void updateDate()
+    {
         mDateButton.setText(DateFormat.format("EEEE dd MMM yyyy", mTask.getDate()).toString());
     }
 }

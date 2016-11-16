@@ -17,9 +17,6 @@ public class Task {
     public Task()
     {
         this(UUID.randomUUID());
-        //Create an ID for the task
-        //mId = UUID.randomUUID();
-        //mDate = new Date();
     }
 
     public Task(UUID id)
