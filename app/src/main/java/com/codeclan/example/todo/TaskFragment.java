@@ -32,6 +32,7 @@ public class TaskFragment extends Fragment
 
     private Task mTask;
     private EditText mTitleField;
+    private EditText mDetailsField;
     private Button mDateButton;
     private CheckBox mCompletedCheckBox;
 
@@ -86,6 +87,32 @@ public class TaskFragment extends Fragment
                 // Blank on purpose...
             }
         });
+
+
+        mDetailsField = (EditText)v.findViewById(R.id.task_details);
+        mDetailsField.setText(mTask.getDetails());
+        mDetailsField.addTextChangedListener(new TextWatcher()
+        {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {
+                // Blank on purpose...
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                mTask.setDetails(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                // Blank on purpose...
+            }
+        });
+
+
 
         mDateButton = (Button)v.findViewById(R.id.task_date);
         updateDate();

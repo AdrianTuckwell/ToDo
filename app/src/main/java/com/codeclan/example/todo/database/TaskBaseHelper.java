@@ -27,6 +27,7 @@ public class TaskBaseHelper extends SQLiteOpenHelper
         db.execSQL("create table " + TaskTable.NAME + "(" + " _id integer primary key autoincrement, " +
                                                         TaskTable.Cols.UUID + ", " +
                                                         TaskTable.Cols.TITLE + ", " +
+                                                        TaskTable.Cols.DETAILS + ", " +
                                                         TaskTable.Cols.DATE + ", " +
                                                         TaskTable.Cols.COMPLETED +
                                                         ")"

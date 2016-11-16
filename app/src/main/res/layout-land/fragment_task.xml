@@ -28,6 +28,15 @@
         android:fontFamily="casual"
         android:textSize="20dp" />
 
+    <EditText android:id="@+id/task_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="casual"
+        android:textSize="25dp"
+        android:hint="@string/task_details_hint"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

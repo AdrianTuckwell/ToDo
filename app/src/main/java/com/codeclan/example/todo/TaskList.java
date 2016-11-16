@@ -96,6 +96,7 @@ public class TaskList
         ContentValues values = new ContentValues();
         values.put(TaskTable.Cols.UUID, task.getId().toString());
         values.put(TaskTable.Cols.TITLE, task.getTitle());
+        values.put(TaskTable.Cols.DETAILS, task.getDetails());
         values.put(TaskTable.Cols.DATE, task.getDate().getTime());
         values.put(TaskTable.Cols.COMPLETED, task.isCompleted() ? 1 : 0 );
 

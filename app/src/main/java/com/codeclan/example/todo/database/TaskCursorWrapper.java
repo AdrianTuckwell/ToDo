@@ -23,11 +23,13 @@ public class TaskCursorWrapper extends CursorWrapper
     {
         String uuidString = getString(getColumnIndex(TaskTable.Cols.UUID));
         String title = getString(getColumnIndex(TaskTable.Cols.TITLE));
+        String details = getString(getColumnIndex(TaskTable.Cols.DETAILS));
         Long date = getLong(getColumnIndex(TaskTable.Cols.DATE));
         int isCompleted = getInt(getColumnIndex(TaskTable.Cols.COMPLETED));
 
         Task task = new Task(UUID.fromString(uuidString));
         task.setTitle(title);
+        task.setDetails(details);
         task.setDate(new Date(date));
         task.setCompleted(isCompleted !=0);
 

@@ -11,6 +11,7 @@ public class Task {
 
     private UUID mId;
     private String mTitle;
+    private String mDetails;
     private Date mDate;
     private boolean mCompleted;
 
@@ -39,6 +40,17 @@ public class Task {
     public void setTitle(String title)
     {
         this.mTitle = title;
+    }
+
+
+    public String getDetails()
+    {
+        return mDetails;
+    }
+
+    public void setDetails(String details)
+    {
+        this.mDetails = details;
     }
 
     public Date getDate()

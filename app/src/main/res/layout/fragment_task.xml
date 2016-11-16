@@ -5,8 +5,13 @@
     android:layout_height="match_parent"
     android:background="#FFFAE3">
 
-    <TextView
-        android:layout_width="match_parent"
+    <CheckBox android:id="@+id/task_completed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"/>
+
+    <TextView android:id="@+id/page_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/task_title_label"
         android:fontFamily="casual"
@@ -33,17 +38,21 @@
         android:layout_marginRight="5dp"
         android:textSize="25dp"/>
 
+    <EditText android:id="@+id/task_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="casual"
+        android:textSize="25dp"
+        android:hint="@string/task_details_hint"/>
+
     <Button android:id="@+id/task_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
 
-    <CheckBox android:id="@+id/task_completed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/task_completed_label"/>
+
 
 </LinearLayout>
